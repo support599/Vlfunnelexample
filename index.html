@@ -4,70 +4,91 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bad Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    --bg: #0c0c0c;
-    --maroon: #6e1423;
-    --maroon-light: #7d1a2b;
-    --card-blue: #8fa7bd;
+  @font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    src: url('fonts/Montserrat-500.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    src: url('fonts/Montserrat-600.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    src: url('fonts/Montserrat-700.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    src: url('fonts/Montserrat-900.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Alex Brush';
+    font-weight: 400;
+    src: url('fonts/AlexBrush-Regular.ttf') format('truetype');
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    background: var(--bg);
+  html, body {
+    background: #0a0a0a;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
   }
 
+  .phone {
+    container-type: inline-size;
+    container-name: phone;
+    max-width: 520px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    padding-bottom: 6cqw;
+  }
+
   header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 22px 24px;
-    max-width: 1280px;
-    margin: 0 auto;
+    padding: 3.9cqw 5.6cqw 0 5.6cqw;
   }
 
   .logo {
     display: flex;
     flex-direction: column;
-    line-height: 1;
+    line-height: 0.82;
   }
 
   .logo .bad {
     font-weight: 900;
-    font-size: 28px;
-    letter-spacing: 1px;
+    font-size: 8.6cqw;
+    letter-spacing: 0.2cqw;
   }
 
   .logo .marketing {
     font-weight: 600;
-    font-size: 10px;
-    letter-spacing: 4px;
-    margin-top: 2px;
+    font-size: 2.75cqw;
+    letter-spacing: 0.62cqw;
+    margin-top: 0.9cqw;
+    margin-left: 0.1cqw;
   }
 
   .nav-right {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 2.2cqw;
+    margin-top: 0.5cqw;
   }
 
   .work-btn {
-    background: linear-gradient(180deg, var(--maroon-light), var(--maroon));
-    border: 1px solid #8a2436;
+    background: linear-gradient(180deg, #7c1c2c 0%, #63111e 100%);
+    border: 1px solid #8f2e3d;
     color: #fff;
     font-weight: 700;
-    font-size: 14px;
-    padding: 12px 26px;
+    font-size: 3.1cqw;
+    padding: 2.15cqw 5.1cqw;
     border-radius: 999px;
     cursor: pointer;
     white-space: nowrap;
@@ -77,93 +98,110 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    width: 6.3cqw;
+    height: 4.9cqw;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
   }
 
   .menu-btn span {
     display: block;
-    width: 26px;
+    width: 100%;
     height: 2px;
     background: #fff;
+    border-radius: 2px;
   }
 
   main {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 8px 20px 40px;
+    padding: 0 2.65cqw;
+    margin-top: 9.9cqw;
   }
 
   .hero-card {
     position: relative;
-    border-radius: 28px;
+    border-radius: 4.5cqw;
     overflow: hidden;
-    aspect-ratio: 4 / 5;
-    background: linear-gradient(135deg, #a7bccd 0%, var(--card-blue) 45%, #7f97ac 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    aspect-ratio: 1096 / 1607;
+    background:
+      linear-gradient(160deg, #9db4c7 0%, #8ba4b9 35%, #7891a8 70%, #6f899f 100%);
   }
 
-  /* Placeholder image treatment */
-  .hero-card::before {
-    content: "";
+  .hero-card .sheen {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(circle at 15% 65%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 35%),
-      radial-gradient(circle at 85% 85%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 40%);
-    mix-blend-mode: screen;
+    overflow: hidden;
   }
 
-  .hero-card .placeholder-tag {
+  .hero-card .sheen::before,
+  .hero-card .sheen::after {
+    content: "";
     position: absolute;
-    top: 16px;
-    left: 16px;
-    background: rgba(0,0,0,0.35);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    z-index: 3;
+    left: -60%;
+    width: 220%;
+    background: linear-gradient(
+      100deg,
+      transparent 42%,
+      rgba(255, 255, 255, 0.16) 48%,
+      rgba(255, 255, 255, 0.24) 50%,
+      rgba(255, 255, 255, 0.16) 52%,
+      transparent 58%
+    );
+  }
+
+  .hero-card .sheen::before {
+    top: 20%;
+    height: 95%;
+    transform: rotate(-30deg);
+  }
+
+  .hero-card .sheen::after {
+    top: 55%;
+    height: 50%;
+    transform: rotate(-30deg);
+    opacity: 0.55;
   }
 
   .hero-logo {
-    position: relative;
+    position: absolute;
+    left: 17.9%;
+    top: 40.9%;
+    width: 65%;
+    text-align: left;
     z-index: 2;
-    text-align: center;
-    margin: auto 0;
-    padding: 0 20px;
   }
 
   .hero-logo .bad {
     font-weight: 900;
-    font-size: clamp(48px, 12vw, 96px);
-    line-height: 0.9;
+    font-size: 24.5cqw;
+    line-height: 0.82;
     color: #fff;
-    letter-spacing: 2px;
+    letter-spacing: -0.2cqw;
+    white-space: nowrap;
   }
 
   .hero-logo .marketing {
     font-weight: 500;
-    font-size: clamp(20px, 5vw, 38px);
-    letter-spacing: clamp(6px, 2vw, 14px);
+    font-size: 8.9cqw;
+    letter-spacing: 0.85cqw;
     color: #fff;
-    margin-top: 8px;
+    margin-top: 1.6cqw;
+    white-space: nowrap;
   }
 
   .hero-footer {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8.4%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 24px 28px 32px;
+    padding: 0 6.5%;
+    z-index: 2;
   }
 
   .signature {
@@ -173,89 +211,95 @@
   }
 
   .signature .script {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 1;
+    font-family: 'Alex Brush', cursive;
+    font-weight: 400;
+    font-size: 9.2cqw;
+    line-height: 0.7;
+    white-space: nowrap;
   }
 
   .signature .caption {
-    font-size: 11px;
-    letter-spacing: 4px;
-    margin-top: 2px;
-    margin-left: 4px;
-    font-weight: 500;
+    font-size: 2.15cqw;
+    letter-spacing: 0.45cqw;
+    margin-top: 1cqw;
+    margin-left: 3.6cqw;
+    font-weight: 600;
   }
 
   .speck-logo {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 0.7cqw;
     color: #fff;
   }
 
-  .speck-logo .asterisk {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: 700;
+  .speck-logo svg {
+    width: 3.6cqw;
+    height: 3.6cqw;
+    flex-shrink: 0;
+  }
+
+  .speck-logo .paren {
+    font-size: 4.4cqw;
+    font-weight: 500;
+    line-height: 1;
   }
 
   .speck-logo .word {
-    font-size: 22px;
+    font-size: 5cqw;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
-  }
-
-  @media (max-width: 480px) {
-    .hero-footer {
-      padding: 20px 20px 26px;
-    }
+    margin-left: 0.2cqw;
   }
 </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <span class="bad">BAD</span>
-      <span class="marketing">MARKETING</span>
-    </div>
-    <div class="nav-right">
-      <button class="work-btn">Work With Us</button>
-      <button class="menu-btn" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-    <div class="hero-card">
-      <span class="placeholder-tag">Image placeholder</span>
-
-      <div class="hero-logo">
-        <div class="bad">BAD</div>
-        <div class="marketing">MARKETING</div>
+  <div class="phone">
+    <header>
+      <div class="logo">
+        <span class="bad">BAD</span>
+        <span class="marketing">MARKETING</span>
       </div>
+      <div class="nav-right">
+        <button class="work-btn">Work With Us</button>
+        <button class="menu-btn" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
 
-      <div class="hero-footer">
-        <div class="signature">
-          <span class="script">Jay Shetty</span>
-          <span class="caption">SHETTY</span>
+    <main>
+      <div class="hero-card">
+        <div class="sheen"></div>
+
+        <div class="hero-logo">
+          <div class="bad">BAD</div>
+          <div class="marketing">MARKETING</div>
         </div>
-        <div class="speck-logo">
-          <span class="asterisk">*</span>
-          <span class="word">speck</span>
+
+        <div class="hero-footer">
+          <div class="signature">
+            <span class="script">Jay Shetty</span>
+            <span class="caption">SHETTY</span>
+          </div>
+          <div class="speck-logo">
+            <span class="paren">(</span>
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#fff" stroke-width="3.4" stroke-linecap="round">
+                <line x1="16" y1="3" x2="16" y2="29" />
+                <line x1="16" y1="3" x2="16" y2="29" transform="rotate(60 16 16)" />
+                <line x1="16" y1="3" x2="16" y2="29" transform="rotate(120 16 16)" />
+              </g>
+            </svg>
+            <span class="paren">)</span>
+            <span class="word">speck</span>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
