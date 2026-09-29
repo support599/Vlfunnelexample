@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bad Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c0c0c;
+    --maroon: #6e1423;
+    --maroon-light: #7d1a2b;
+    --card-blue: #8fa7bd;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo .bad {
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .logo .marketing {
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 2px;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .work-btn {
+    background: linear-gradient(180deg, var(--maroon-light), var(--maroon));
+    border: 1px solid #8a2436;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #fff;
+  }
+
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8px 20px 40px;
+  }
+
+  .hero-card {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #a7bccd 0%, var(--card-blue) 45%, #7f97ac 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Placeholder image treatment */
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 65%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 35%),
+      radial-gradient(circle at 85% 85%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 40%);
+    mix-blend-mode: screen;
+  }
+
+  .hero-card .placeholder-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  .hero-logo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: auto 0;
+    padding: 0 20px;
+  }
+
+  .hero-logo .bad {
+    font-weight: 900;
+    font-size: clamp(48px, 12vw, 96px);
+    line-height: 0.9;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .hero-logo .marketing {
+    font-weight: 500;
+    font-size: clamp(20px, 5vw, 38px);
+    letter-spacing: clamp(6px, 2vw, 14px);
+    color: #fff;
+    margin-top: 8px;
+  }
+
+  .hero-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 24px 28px 32px;
+  }
+
+  .signature {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  .signature .script {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .signature .caption {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 2px;
+    margin-left: 4px;
+    font-weight: 500;
+  }
+
+  .speck-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+  }
+
+  .speck-logo .asterisk {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .speck-logo .word {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+  }
+
+  @media (max-width: 480px) {
+    .hero-footer {
+      padding: 20px 20px 26px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="bad">BAD</span>
+      <span class="marketing">MARKETING</span>
+    </div>
+    <div class="nav-right">
+      <button class="work-btn">Work With Us</button>
+      <button class="menu-btn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-card">
+      <span class="placeholder-tag">Image placeholder</span>
+
+      <div class="hero-logo">
+        <div class="bad">BAD</div>
+        <div class="marketing">MARKETING</div>
+      </div>
+
+      <div class="hero-footer">
+        <div class="signature">
+          <span class="script">Jay Shetty</span>
+          <span class="caption">SHETTY</span>
+        </div>
+        <div class="speck-logo">
+          <span class="asterisk">*</span>
+          <span class="word">speck</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
